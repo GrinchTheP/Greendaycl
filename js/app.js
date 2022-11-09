@@ -1,0 +1,28 @@
+const burger = document.querySelector('.burger');
+const navegacion = document.querySelector('.navegacion');
+const enlaces = document.querySelectorAll('.navegacion a');
+console.log(enlaces);
+document.addEventListener('DOMContentLoaded',()=>{
+    mostrarMenu();
+    cerrarMenu();
+
+});
+
+function mostrarMenu(){
+    burger.addEventListener('click',()=>{
+        navegacion.classList.toggle('ocultar');
+
+    }); 
+}
+
+function cerrarMenu(){
+    enlaces.forEach(enlace =>{
+        enlace.addEventListener('click',(e)=>{
+        
+            if(e.target.tagName === 'A'){
+                navegacion.classList.add('ocultar');
+            }
+
+        });
+    });
+}
